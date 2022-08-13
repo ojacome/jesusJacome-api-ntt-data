@@ -4,7 +4,7 @@ import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm'
 export class Metric{
     
     @PrimaryGeneratedColumn()
-    id_metric: Number
+    id_repository: Number
 
 
     @Column()

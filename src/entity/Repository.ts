@@ -1,5 +1,7 @@
 import { IsEnum } from 'class-validator';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, ManyToOne, OneToOne, JoinColumn } from 'typeorm'
+import { Metric } from './Metric';
+import { Tribe } from './Tribe';
 
 
 export enum StatusRepository {
@@ -41,4 +43,13 @@ export class Repository {
 
     @CreateDateColumn({ type: "timestamp" })
     create_time: Date;
+
+    
+    @ManyToOne(() => Tribe, (tribe) => tribe.repositories)
+    tribe: Tribe
+
+
+    @OneToOne(() => Metric)
+    @JoinColumn()
+    metric: Metric
 }
