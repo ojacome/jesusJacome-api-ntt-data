@@ -6,13 +6,13 @@ import { Repository } from './Repository'
 export class Tribe{
     
     @PrimaryGeneratedColumn()
-    id_tribe: Number
+    id_tribe: number
 
     @Column({ length: 50 })
     name: string
 
     @Column()
-    status: Number
+    status: number
 
     @ManyToOne(() => Organization, (organization) => organization.tribes)
     organization: Organization

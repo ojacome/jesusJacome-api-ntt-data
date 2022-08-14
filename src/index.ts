@@ -22,6 +22,12 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).json({ message: "Ruta no encontrada!"});
 });
 
+app.use((err:Error, req: Request, res: Response, next: NextFunction) => {
+    console.error(err.stack);
+            
+    res.status(500).json({ message: 'Error en el servidor!'});
+});
+
 app.listen(3000, () => console.log('server on port ', 3000))
 
 
