@@ -5,13 +5,13 @@ import { Tribe } from './Tribe'
 export class Organization{
     
     @PrimaryGeneratedColumn()
-    id_organization: Number
+    id_organization: number
 
     @Column({ length: 50 })
     name: string
 
     @Column()
-    status: Number
+    status: number
 
     @OneToMany(() => Tribe, (tribe) => tribe.organization)
     tribes: Tribe[]
