@@ -4,25 +4,25 @@ import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm'
 export class Metric{
     
     @PrimaryGeneratedColumn()
-    id_repository: Number
+    id_repository: number
 
 
     @Column()
-    coverage: Number
+    coverage: number
 
 
     @Column()
-    bugs: Number
+    bugs: number
 
 
     @Column()
-    vulnerabilities: Number
+    vulnerabilities: number
 
 
     @Column()
-    hotspot: Number
+    hotspot: number
 
 
     @Column()
-    code_smells: Number
+    code_smells: number
 }

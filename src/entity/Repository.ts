@@ -20,7 +20,7 @@ export enum StateRepository {
 export class Repository {
 
     @PrimaryGeneratedColumn()
-    id_repository: Number
+    id_repository: number
 
 
     @Column({ length: 50 })

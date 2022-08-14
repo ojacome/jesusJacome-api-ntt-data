@@ -36,14 +36,14 @@ AppDataSource.initialize()
         // let metric = new Metric
         // metric.bugs = 8
         // metric.code_smells = 3
-        // metric.coverage = 80
+        // metric.coverage = 50
         // metric.hotspot = 2
         // metric.vulnerabilities = 7
         // await AppDataSource.manager.save(metric)
 
         // let repo = new Repository
         // repo.name = "backend"
-        // repo.state = StateRepository.ENABLE
+        // repo.state = StateRepository.DISABLE
         // repo.status = StatusRepository.ACTIVE
         // repo.metric = metric
         // await AppDataSource.manager.save(repo)

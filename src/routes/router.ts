@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 import mockRouter from "./mock.routes";
 import organizationRouter from "./organization.routes";
+import tribeRouter from "./tribe.routes";
 
 let router = Router();
 router.get('/', (req: Request,res: Response) => {
@@ -14,5 +15,6 @@ router.get('/', (req: Request,res: Response) => {
 
 router.use('/mock', mockRouter)
 router.use('/organization', organizationRouter)
+router.use('/tribe', tribeRouter)
 
 export default router
