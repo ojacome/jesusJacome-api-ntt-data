@@ -12,3 +12,12 @@ export let createOrganization = async (req: Request, res: Response) => {
         result
     })
 }
+
+export let getOrganization = async (req: Request, res: Response) => {
+
+    const organizations = await AppDataSource.getRepository(Organization).find()
+
+    return res.status(200).json({
+        organizations
+    })
+}

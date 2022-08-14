@@ -1,8 +1,9 @@
 import {Router} from 'express'
-import { createOrganization } from '../controllers/organization.controller';
+import { createOrganization, getOrganization } from '../controllers/organization.controller';
 
 const organizationRouter = Router();       
 
+organizationRouter.get('/', getOrganization)    
 organizationRouter.post('/', createOrganization)    
     
 export default organizationRouter;
