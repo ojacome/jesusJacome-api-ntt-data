@@ -1,13 +1,13 @@
 // import 'reflect-metada'
-import express from 'express'
+import express, { NextFunction, Request, Response } from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
-import userRoutes from './routes/user.routes'
 import { AppDataSource } from './dataSource'
 import { Organization } from './entity/Organization'
 import { Repository, StateRepository, StatusRepository } from './entity/Repository'
 import { Metric } from './entity/Metric'
 import { Tribe } from './entity/Tribe'
+import router from './routes/router'
 
 let app = express()
 
@@ -17,10 +17,13 @@ app.use(morgan('dev'))
 app.use(express.json())
 
 //routes
-app.use(userRoutes)
+app.use('/api/v1', router);
+app.use((req: Request, res: Response, next: NextFunction) => {
+    res.status(404).json({ message: "Ruta no encontrada!"});
+});
 
-app.listen(3000)
-console.log('server on port ', 3000)
+app.listen(3000, () => console.log('server on port ', 3000))
+
 
 AppDataSource.initialize()
     .then(async () => {
